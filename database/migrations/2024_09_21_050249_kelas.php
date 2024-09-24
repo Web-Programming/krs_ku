@@ -14,10 +14,7 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
             $table->string('namaKelas')->unique();
-            $table->integer('kapasitas');
-            $table->string('jadwal');
-            $table->unsignedBigInteger('matakuliah_id');
-            $table->foreign('matakuliah_id')->references('id')->on('matakuliah')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('prodiKelas');
             $table->timestamps();
         });
     }
