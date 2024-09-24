@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KrsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,8 @@ Route::controller(JadwalController::class)->group(function(){
     Route::get('/update-jadwal-{jadwal:id}', 'updateview');
     Route::put('/update-jadwal-{jadwal:id}', 'update');
     Route::delete('/delete-jadwal-{jadwal:id}', 'delete');
+});
+
+Route::controller(KrsController::class)->group(function(){
+    Route::get('/krs', 'index');
 });
