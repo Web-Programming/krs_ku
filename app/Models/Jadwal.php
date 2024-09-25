@@ -11,6 +11,9 @@ class Jadwal extends Model
     protected $guarded = [];
     protected $table = 'jadwal';
 
+    public function krs(){
+        return $this->hasMany(Krs::class);
+    }
     public function kelas(){
         return $this->belongsTo(Kelas::class,'kelas_id','id');
     }

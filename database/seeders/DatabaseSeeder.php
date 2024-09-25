@@ -553,43 +553,28 @@ class DatabaseSeeder extends Seeder
         
         Krs::create([
             'user_id' => 2,
-            'jadwal_id' => 1,
+            'kelas_id' => 1,
+            'matakuliah_id' => 1
         ]);
         Krs::create([
             'user_id' => 2,
-            'jadwal_id' => 2,
+            'kelas_id' => 1,
+            'matakuliah_id' => 2
         ]);
         Krs::create([
             'user_id' => 2,
-            'jadwal_id' => 3,
+            'kelas_id' => 1,
+            'matakuliah_id' => 3
         ]);
         Krs::create([
             'user_id' => 2,
-            'jadwal_id' => 4,
+            'kelas_id' => 1,
+            'matakuliah_id' => 4
         ]);
         Krs::create([
             'user_id' => 2,
-            'jadwal_id' => 5,
-        ]);
-        Krs::create([
-            'user_id' => 2,
-            'jadwal_id' => 6,
-        ]);
-        Krs::create([
-            'user_id' => 2,
-            'jadwal_id' => 7,
-        ]);
-        Krs::create([
-            'user_id' => 2,
-            'jadwal_id' => 8,
-        ]);
-        Krs::create([
-            'user_id' => 2,
-            'jadwal_id' => 9,
-        ]);
-        Krs::create([
-            'user_id' => 2,
-            'jadwal_id' => 10,
+            'kelas_id' => 1,
+            'matakuliah_id' => 5
         ]);
     }
 }

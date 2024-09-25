@@ -15,6 +15,9 @@ class MataKuliah extends Model
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
     }
+    public function krs(){
+        return $this->hasMany(Krs::class);
+    }
     public function kelas(): BelongsToMany
     {
         return $this->belongsToMany(Kelas::class, 'jadwal', 'matakuliah_id', 'kelas_id');

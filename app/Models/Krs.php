@@ -17,4 +17,7 @@ class Krs extends Model
     public function kelas(){
         return $this->belongsTo(Kelas::class,'kelas_id','id');
     }
+    public function matakuliah(){
+        return $this->belongsTo(MataKuliah::class,'matakuliah_id','id');
+    }
 }

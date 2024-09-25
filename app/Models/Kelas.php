@@ -12,11 +12,11 @@ class Kelas extends Model
     protected $guarded = [];
     protected $table = 'kelas';
 
-    public function krs(){
-        return $this->hasMany(Krs::class);
-    }
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
+    }
+    public function krs(){
+        return $this->hasMany(Krs::class);
     }
     public function matakuliah(): BelongsToMany
     {
