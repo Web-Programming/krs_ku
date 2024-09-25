@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('password');
             $table->enum('role', ['BAA','Mahasiswa']);
+            $table->string('status')->default('Belum mengisi KRS');
             $table->timestamps();
         });
     }

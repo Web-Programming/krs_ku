@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class MataKuliah extends Model
 {
@@ -11,7 +12,11 @@ class MataKuliah extends Model
     protected $guarded = [];
     protected $table = 'matakuliah';
 
-    public function kelas(){
-        return $this->hasMany(Kelas::class);
+    public function jadwal(){
+        return $this->hasMany(Jadwal::class);
+    }
+    public function kelas(): BelongsToMany
+    {
+        return $this->belongsToMany(Kelas::class, 'jadwal', 'matakuliah_id', 'kelas_id');
     }
 }

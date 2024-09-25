@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('krs', function (Blueprint $table) {
+        Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('kelas_id');
             $table->foreign('kelas_id')->references('id')->on('kelas')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('status');
+            $table->unsignedBigInteger('matakuliah_id');
+            $table->foreign('matakuliah_id')->references('id')->on('matakuliah')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('hari');
+            $table->string('waktu');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('krs');
+        Schema::dropIfExists('jadwal');
     }
 };

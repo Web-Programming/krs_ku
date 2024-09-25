@@ -41,6 +41,7 @@
                                 <h6 class="mb-0 text-sm">{{ $item->status }}</h6>
                                 </td>
                                 <td class="d-flex">
+
                                     <a href="" class="btn btn-primary btn-sm">
                                         Lihat KRS
                                     </a>
@@ -48,6 +49,15 @@
                                         Validasi
                                     </a>
                                     <a href="" class="btn btn-danger btn-sm">
+
+                                    <a href="/lihat-krs-{{ $item->id }}" class="btn btn-primary btn-sm">
+                                        Lihat KRS
+                                    </a>
+                                    <a href="{{ url('validasi-krs-'.$item->id) }}" class="btn btn-success btn-sm mx-3">
+                                        Validasi
+                                    </a>
+                                    <a href="{{ url('tolak-krs-'.$item->id) }}" class="btn btn-danger btn-sm">
+
                                         Tolak
                                     </a>
                                 </td>

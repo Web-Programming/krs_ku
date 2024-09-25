@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Kelas extends Model
 {
@@ -14,7 +15,11 @@ class Kelas extends Model
     public function krs(){
         return $this->hasMany(Krs::class);
     }
-    public function matakuliah(){
-        return $this->belongsTo(MataKuliah::class,'matakuliah_id','id');
+    public function jadwal(){
+        return $this->hasMany(Jadwal::class);
+    }
+    public function matakuliah(): BelongsToMany
+    {
+        return $this->belongsToMany(MataKuliah::class, 'jadwal', 'kelas_id', 'matakuliah_id');
     }
 }

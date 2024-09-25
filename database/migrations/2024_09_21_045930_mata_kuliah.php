@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('kodeMK')->unique();
             $table->string('namaMK');
-            $table->string('dosen');
+            $table->integer('sks');
+            $table->integer('kapasitas');
             $table->timestamps();
         });
     }
